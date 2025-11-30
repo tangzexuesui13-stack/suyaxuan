@@ -1,0 +1,22 @@
+{
+  "servers": [
+    {
+      "id": 1,
+      "name": "本地服务器",
+      "host": "localhost",
+      "port": 8765
+    },
+    {
+      "id": 2,
+      "name": "局域网服务器",
+      "host": "0.0.0.0",
+      "port": 8765
+    },
+    {
+      "id": 3,
+      "name": "备用服务器",
+      "host": "localhost",
+      "port": 8766
+    }
+  ]
+}
