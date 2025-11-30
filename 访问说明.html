@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaiP智能聊天室 - 访问说明</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+        }
+        .step {
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .code {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        .url {
+            color: #667eea;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>DaiP智能聊天室 - 访问说明</h1>
+    
+    <div class="step">
+        <h2>步骤1：启动WebSocket服务器（可选）</h2>
+        <p>如果您想要体验真实的多人聊天功能，需要启动服务器：</p>
+        <p>在Windows系统中，打开命令提示符（CMD）或PowerShell，按顺序运行以下命令：</p>
+        <div class="code">cd d:\实训\带派\server<br>python -m venv venv<br>venv\Scripts\activate<br>pip install websockets<br>python server.py</div>
+        <p>这些命令会：</p>
+        <ul>
+            <li>创建Python虚拟环境</li>
+            <li>激活虚拟环境</li>
+            <li>安装websockets库</li>
+            <li>启动WebSocket服务器</li>
+        </ul>
+        <p>服务器启动后将同时监听：</p>
+        <ul>
+            <li>本地访问：ws://localhost:8765</li>
+            <li>局域网访问：ws://服务器IP:8765</li>
+        </ul>
+        <p><strong>注意：</strong>如果无法启动服务器或不需要多人聊天功能，可以选择进入<strong>模拟聊天模式</strong>直接体验界面功能。</p>
+    </div>
+    
+    <div class="step">
+        <h2>步骤2：访问聊天室</h2>
+        <p>方法一：直接在浏览器中打开本地文件</p>
+        <div class="code">d:\实训\带派\client\index.html</div>
+        
+        <p>方法二：使用本地HTTP服务器（如果Python可用）</p>
+        <div class="code">cd d:\实训\带派\client<br>python -m http.server 8000</div>
+        <p>然后在浏览器中访问：<span class="url">http://localhost:8000</span></p>
+    </div>
+    
+    <div class="step">
+        <h2>步骤3：开始聊天</h2>
+        <ul>
+            <li>输入您的昵称</li>
+            <li>选择服务器地址：
+                <ul>
+                    <li><strong>本地服务器：</strong>仅在本机上使用</li>
+                    <li><strong>局域网服务器：</strong>用于与局域网内其他用户聊天</li>
+                    <li><strong>备用服务器：</strong>备用连接选项</li>
+                </ul>
+            </li>
+            <li>点击登录按钮进入聊天室</li>
+            <li>在聊天界面中发送消息、表情或使用@指令</li>
+        </ul>
+    </div>
+    
+    <div class="step">
+        <h2>模拟聊天模式</h2>
+        <p>如果无法启动WebSocket服务器，系统会自动提示您进入模拟聊天模式。在此模式下：</p>
+        <ul>
+            <li>您可以看到模拟的在线用户</li>
+            <li>系统会自动生成其他用户的聊天消息</li>
+            <li>支持@川小农AI对话功能</li>
+            <li>支持@电影URL播放功能</li>
+            <li>这是一个单机体验版本，无需服务器支持</li>
+        </ul>
+    </div>
+    
+    <div class="step">
+        <h2>局域网聊天设置</h2>
+        <p>要在局域网内进行多人聊天：</p>
+        <ol>
+            <li>在一台电脑上启动服务器</li>
+            <li>确认该电脑的防火墙允许端口8765的访问</li>
+            <li>其他电脑在登录时选择"局域网服务器"选项</li>
+            <li>确保所有电脑连接到同一个局域网</li>
+        </ol>
+    </div>
+    
+    <div class="step">
+        <h2>注意事项</h2>
+        <ul>
+            <li>真实多人聊天功能需要启动WebSocket服务器</li>
+            <li>所有用户需要在同一局域网内才能相互通信</li>
+            <li>请确保服务器的防火墙允许端口8765的访问</li>
+            <li>模拟聊天模式无需服务器，适合快速体验界面功能</li>
+        </ul>
+    </div>
+</body>
+</html>
