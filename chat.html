@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaiP智能聊天室</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="header">
+            <h2>DaiP智能聊天室</h2>
+            <button id="logout-btn" class="btn btn-secondary">退出</button>
+        </div>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="online-users">
+                    <h3>在线用户</h3>
+                    <ul id="user-list"></ul>
+                </div>
+            </div>
+            
+            <div class="chat-area">
+                <div id="messages" class="messages"></div>
+                
+                <div class="input-area">
+                    <div class="message-input-wrapper">
+                        <textarea id="message-input" placeholder="输入消息...
+支持@xxx指令：
+@川小农 - AI对话
+@电影URL - 电影播放"></textarea>
+                        <button id="send-btn" class="btn btn-primary">发送</button>
+                    </div>
+                    <div class="emoji-panel">
+                        <button class="emoji-btn">😊</button>
+                        <button class="emoji-btn">😂</button>
+                        <button class="emoji-btn">🤔</button>
+                        <button class="emoji-btn">❤️</button>
+                        <button class="emoji-btn">👍</button>
+                        <button class="emoji-btn">🎉</button>
+                        <button class="emoji-btn">😎</button>
+                        <button class="emoji-btn">🥳</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 电影播放器模态框 -->
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="movie-player">
+                <iframe id="movie-iframe" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/chat.js"></script>
+</body>
+</html>
